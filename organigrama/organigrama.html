@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organigrama Interactivo</title>
+    <link rel="stylesheet" href="orga.css   ">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f4f7;
+        }
+
+        .organigrama {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+
+        .nivel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .nivel .titulo {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+
+        .subnivel {
+            display: none;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .subnivel .subtitulo {
+            background-color: #6c757d;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            flex-basis: 30%;
+            text-align: center;
+            margin-bottom: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .subnivel .subtitulo:hover {
+            background-color: #5a6268;
+        }
+
+        .subnivel .subtitulo span {
+            display: block;
+            background-color: #f8f9fa;
+            color: #343a40;
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+
+        .nivel.active .subnivel {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+ <div class="container">
+    <h1>peru es un país maravilloso 
+        <br></h1>
+    <p>peru es un país maravilloso</p>
+    <br>
+    <br>
+ </div>
+
+
+    <div class="organigrama">
+        <div class="nivel">
+            <div class="titulo">Director General</div>
+            <div class="subnivel">
+                <div class="subtitulo">Director de Software</div>
+                <div class="subtitulo">Director de Marketing Digital</div>
+                <div class="subtitulo">Director de Arquitectura y Diseño</div>
+                <div class="subtitulo">Director de Ingeniería y Construcción</div>
+                <div class="subtitulo">Director de Educación Digital</div>
+            </div>
+        </div>
+        
+        <div class="nivel">
+            <div class="titulo">Departamentos Generales</div>
+            <div class="subnivel">
+                <div class="subtitulo">Departamento de Recursos Humanos</div>
+                <div class="subtitulo">Departamento de Ventas y Atención al Cliente</div>
+                <div class="subtitulo">Departamento de Comunicación Corporativa</div>
+                <div class="subtitulo">Departamento de Finanzas y Legal</div>
+            </div>
+        </div>
+
+        <div class="nivel">
+            <div class="titulo">Operaciones y Soporte</div>
+            <div class="subnivel">
+                <div class="subtitulo">Departamento de TI</div>
+                <div class="subtitulo">Departamento de Operaciones</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.nivel .titulo').forEach(titulo => {
+            titulo.addEventListener('click', function() {
+                const nivel = this.parentElement;
+                nivel.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
