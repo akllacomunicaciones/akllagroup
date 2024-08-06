@@ -1,0 +1,2 @@
+# akllagroup
+todo lo aprendido
